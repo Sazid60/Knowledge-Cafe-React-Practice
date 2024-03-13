@@ -16,10 +16,13 @@ setBookmarks(newBookmarks)
 // console.log(bookmarks)
 }
 
-const handleMarkAsRead = (time) =>{
+const handleMarkAsRead = (time,id) =>{
 // console.log(time)
 setReadingTime(readingTime + time)
 console.log(readingTime)
+// Remove from bookmarks wen marked as read 
+const remainingBookmarks = bookmarks.filter(bookmark => bookmark.id !==id);
+setBookmarks(remainingBookmarks) 
 }
   return (
     <>
